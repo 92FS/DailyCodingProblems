@@ -15,7 +15,7 @@ using namespace std;
 
 //prototypes
 int* algorithmN2(int[], int);//without division
-int* algorithmN(int[], int)throw (invalid_argument);//WARNING: cannot handle array with any item set to 0
+int* algorithmN(int[], int)throw (invalid_argument);//with division but O(n) instead of O(n^2)
 void display(int*, int);
 
 int main(){
@@ -75,9 +75,7 @@ int* algorithmN(int n[], int s)throw (invalid_argument){
 		if(n[i] == 0)
 			throw invalid_argument("cannot handle arrays with any value equal to zero");
 		product *= n[i];
-	}
-		
-	
+	}	
 	
 	//each item in b is simply the product of all numbers divided by the corosponding entry in n[i]
 	for(int i = 0; i < s; ++i)
